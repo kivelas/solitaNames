@@ -20,7 +20,10 @@ class Navigation extends React.Component {
 }
 
 class Content extends React.Component {
+  
   render(){
+    const orderedNames= Names.names.sort((b,a) => a.amount - b.amount);
+  
     return (
       <div>
         <table border='2'>
@@ -29,7 +32,7 @@ class Content extends React.Component {
               <th>Name</th>
               <th>Amount</th>
             </tr>
-            {Names.names.map((item, i) => (
+            {orderedNames.map((item, i) => (
               <tr key={i}>
                 <td>{item.name}</td>
                 <td>{item.amount}</td>
