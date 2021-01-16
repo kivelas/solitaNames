@@ -50,7 +50,7 @@ class Content extends React.Component {
 
 ReactDOM.render(
   <Content />,
-  document.getElementById('root')
+  document.getElementById('app')
 );
 /*
 ReactDOM.render(
