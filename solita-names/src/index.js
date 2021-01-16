@@ -4,20 +4,20 @@ import './index.css';
 //import App from './App';
 //import reportWebVitals from './reportWebVitals';
 import Names from './names.json';
-
+/*
 class Navigation extends React.Component {
   render(){
     return (
       <div>
         <button
           className="list"
-          /*onClick={this.props.onClick}*/>
+          /*onClick={this.props.onClick}>
             List
           </button>
       </div>
     );
   }
-}
+}*/
 
 class Content extends React.Component {
   
