@@ -1,5 +1,5 @@
 body {
-  margin: 10;
+  margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -15,7 +15,7 @@ code {
 }
 
 a:link {
-  color: white;
+  color: wheat;
   text-decoration: none;
 }
 
@@ -24,12 +24,44 @@ a:hover {
 }
 
 a:visited {
-  color: wheat;
+  color: rgb(199, 195, 195);
 }
 
 footer, h1 {
   background-color: red ;
+  color: white;
   padding: 25px 10px;
 }
 
+#app {
+  margin: auto;
+  padding: 10px;
+}
 
+button {
+  background-color: rgb(27, 199, 27);
+  color:white;
+  margin-bottom: 20px;
+  border-color: white;
+  border: 0px 2px;
+  font-size: large;
+}
+
+button:hover {
+  background-color: black;
+}
+
+button:active {
+  background-color: gray;
+}
+
+.results {
+  width: 50%;
+  margin:auto;
+}
+
+table {
+  border-color: green;
+  border-collapse: collapse;
+  padding: 2px;
+}
