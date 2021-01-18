@@ -51,7 +51,8 @@ class Results extends React.Component {
       const orderedNames= Names.names.sort((b,a) => a.amount - b.amount);
       return (
         <div>
-          <table border='2'>
+          <p>10 most popular male and 10 most popular female names organized by the amount:</p>
+          <table>
             <tbody>
               <tr>
                 <th>Name</th>
@@ -71,7 +72,7 @@ class Results extends React.Component {
       const abcNames = Names.names.sort((a,b) => a.name.localeCompare(b.name));
       return (
         <div>
-          <table border='2'>
+          <table>
             <tbody>
               <tr>
                 <th>Names in alphabetical order</th>
@@ -91,7 +92,7 @@ class Results extends React.Component {
       sum = names.map(total => total.amount).reduce((acc,total) => total + acc);
       return (
         <div>
-          <p>The total sum of the 10 most popular male and female names is <b>{sum}</b>.</p>
+          <p>The total sum of the 10 most popular male and 10 most popular female names is <b>{sum}</b>.</p>
         </div>
       );  
     } else if(index === 3){
@@ -101,7 +102,7 @@ class Results extends React.Component {
     }
 
     return(
-      <p></p>
+      <p><b>Press a green button of your choice!</b></p>
     );
   }
 }
@@ -110,7 +111,7 @@ class Content extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      indexOfClickedButton: 0,
+      indexOfClickedButton: -1,
       history: [{
         buttons: ["List by popularity", "ABC", "Sum of names", "Search"],
       }]

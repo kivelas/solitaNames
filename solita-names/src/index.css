@@ -51,8 +51,8 @@ button:hover {
   background-color: black;
 }
 
-button:active {
-  background-color: gray;
+button:focus {
+  background-color: rgb(18, 110, 18);
 }
 
 .results {
@@ -61,7 +61,16 @@ button:active {
 }
 
 table {
-  border-color: green;
-  border-collapse: collapse;
   padding: 2px;
+  width: 50%;
+  margin: auto;
 }
+
+th {
+  background-color: rgb(243, 111, 111);
+}
+
+tr:nth-child(odd) {
+  background-color: lightgreen;
+}
+
