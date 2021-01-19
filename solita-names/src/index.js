@@ -41,6 +41,79 @@ class NavBar extends React.Component {
   }
 }
 
+class Search extends React.Component {
+  
+  handleChange(event){
+    this.setState({
+      inputText: event.target.value,
+    });
+  }
+
+  render() {
+
+    return (
+      <div>
+        <form>
+          <input autoFocus
+            type='text' 
+            className='input' 
+            value={this.props.givenInput}
+            onChange={this.handleChange.bind(this)}
+            placeholder='Type a name...'>
+          </input>
+        </form>
+        <div className="searchresult">
+          <SearchResult {...this.state}/>
+        </div>
+      </div>
+    );
+  }
+}
+
+class SearchResult extends React.Component {
+  render(){
+    const input = this.props.inputText;
+    let inputUpperCase = '';
+    if(input != null){
+      inputUpperCase = input.toUpperCase();
+    }
+    
+    const abcNames = Names.names.sort((a,b) => a.name.localeCompare(b.name));
+    
+    let namesCopy = [];
+    abcNames.forEach(function(item){
+      namesCopy.push(item.name)
+    })
+    let namesUpperCase = namesCopy.map(function(item) {return item.toUpperCase();});
+    
+    if(namesUpperCase.includes(inputUpperCase)){
+      let nameAmount = 0;
+      let inputLowerCase = input.toLowerCase();
+      let inputTemp = inputLowerCase[0].toUpperCase() + inputLowerCase.substr(1);
+      for(let i=0; i<abcNames.length; i++){
+        if(abcNames[i].name === inputTemp){
+          nameAmount = abcNames[i].amount;
+        }
+      }
+      
+      return(
+        <p>There are <b>{nameAmount}</b> employees called <b>{this.props.inputText}</b> at Solita.</p>
+      );
+    }
+
+    if(input != null){
+      return(
+        <p><b>{this.props.inputText}</b> is not one of the most popular
+        names among Solita's employees.</p>
+      );
+    }
+
+    return(
+      <p></p>
+    );
+  }
+}
+
 class Results extends React.Component {
   
   render() {
@@ -97,7 +170,9 @@ class Results extends React.Component {
       );  
     } else if(index === 3){
       return(
-        <p>3 painettu</p>
+        <div className="search">
+          <Search {...this.state}/>
+        </div>
       )
     }
 
@@ -112,6 +187,7 @@ class Content extends React.Component {
     super(props);
     this.state = {
       indexOfClickedButton: -1,
+      inputText: '',
       history: [{
         buttons: ["List by popularity", "ABC", "Sum of names", "Search"],
       }]
