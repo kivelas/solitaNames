@@ -1,5 +1,5 @@
 # solitaNames
-A web application for applying Solita's Dev Academy.
+An exercise web application for applying Solita's Dev Academy.
 
 In the app you can find information about the most popular female and male names of the Solita employees.
 
