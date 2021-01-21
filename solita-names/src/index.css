@@ -33,6 +33,20 @@ footer, h1 {
   padding: 25px 10px;
 }
 
+h1 {
+  font-size: 50px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+p {
+  font-size: 20px;
+  margin-left: 45px;
+  margin-right: 45px;
+}
+
 #app {
   margin: auto;
   padding: 10px;
@@ -44,7 +58,7 @@ button {
   margin-bottom: 20px;
   border-color: white;
   border: 0px 2px;
-  font-size: large;
+  font-size: 20px;
 }
 
 button:hover {
